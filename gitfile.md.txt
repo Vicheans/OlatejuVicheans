@@ -1,0 +1,19 @@
+module.exports = function(grunt) {
+grunt.initConfig({
+pkg: grunt.file.readJSON("packages.json"),
+"cssmin": {
+"target":{
+"files": {
+"src/styles/bootstrap.min.css":
+["src/styles/*.css", "src/styles!*.min.css"]
+}
+}
+},
+"watch": {
+   "target": {
+"files": ["src/styles/myphoto.css"],
+}
+});
+grunt.loadNpmTasks("grunt-contrib-cssmin");
+grunt.loadNpmTasks("grunt-contrib-watch");
+};
